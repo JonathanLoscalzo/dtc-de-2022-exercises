@@ -1,12 +1,16 @@
 services:
   pgdatabase:
-    image: postgres:13
+    # image: postgres:13
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "${USER_UID:-1000}:0"
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=ny_taxi
     volumes:
-      - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
+      - ./ny_taxi_postgres_data:/var/lib/postgresql/data:rw
     ports:
       - "5432:5432"
     networks: 
