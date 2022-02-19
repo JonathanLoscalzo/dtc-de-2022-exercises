@@ -28,7 +28,7 @@ TABLE_NAME_TEMPLATE = "yellow_taxi_{{ data_interval_start.strftime('%Y_%m') }}"
 @dag(
     schedule_interval="0 6 2 * *",
     start_date=datetime(2019, 1, 1),
-    end_date=datetime(2020, 1, 1),
+    end_date=datetime(2021, 1, 1),
     max_active_runs=3,
     catchup=True,
     default_args=dict(
