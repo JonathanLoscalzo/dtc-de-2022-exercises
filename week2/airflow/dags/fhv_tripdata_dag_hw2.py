@@ -20,7 +20,7 @@ URL_TEMPLATE = (
     URL_PREFIX + "/fhv_tripdata_{{ data_interval_start.strftime('%Y-%m') }}.csv"
 )
 OUTPUT_FILE_TEMPLATE = (
-    AIRFLOW_HOME + "/output_fhv_tripdata_{{ data_interval_start.strftime('%Y-%m') }}.csv"
+    AIRFLOW_HOME + "/fhv_tripdata_{{ data_interval_start.strftime('%Y-%m') }}.csv"
 )
 TABLE_NAME_TEMPLATE = "fhv_tripdata_{{ data_interval_start.strftime('%Y_%m') }}"
 

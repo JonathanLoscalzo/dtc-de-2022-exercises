@@ -17,12 +17,12 @@ PG_DATABASE = os.getenv("PG_DATABASE")
 
 URL_PREFIX = "https://s3.amazonaws.com/nyc-tlc/trip+data"
 URL_TEMPLATE = (
-    URL_PREFIX + "/yellow_tripdata_{{ data_interval_start.strftime('%Y-%m') }}.csv"
+    URL_PREFIX + "/green_tripdata_{{ data_interval_start.strftime('%Y-%m') }}.csv"
 )
 OUTPUT_FILE_TEMPLATE = (
-    AIRFLOW_HOME + "/yellow_tripdata_{{ data_interval_start.strftime('%Y-%m') }}.csv"
+    AIRFLOW_HOME + "/green_tripdata{{ data_interval_start.strftime('%Y-%m') }}.csv"
 )
-TABLE_NAME_TEMPLATE = "yellow_taxi_{{ data_interval_start.strftime('%Y_%m') }}"
+TABLE_NAME_TEMPLATE = "green_taxi_{{ data_interval_start.strftime('%Y_%m') }}"
 
 
 @dag(
@@ -42,7 +42,7 @@ TABLE_NAME_TEMPLATE = "yellow_taxi_{{ data_interval_start.strftime('%Y_%m') }}"
     ),
     dagrun_timeout=None,
 )
-def ingest_yellow_taxi_data():
+def ingest_green_taxi_data():
     download_file(URL_TEMPLATE, OUTPUT_FILE_TEMPLATE) >> ingest_data(
         PG_USER,
         PG_PASSWORD,
@@ -54,4 +54,4 @@ def ingest_yellow_taxi_data():
     )
 
 
-dag_run = ingest_yellow_taxi_data()
+dag_run = ingest_green_taxi_data()

@@ -20,7 +20,7 @@ URL_TEMPLATE = (
     "https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv"
 )
 OUTPUT_FILE_TEMPLATE = (
-    AIRFLOW_HOME + "/output_{{ data_interval_start.strftime('%Y-%m') }}_zones.csv"
+    AIRFLOW_HOME + "/{{ data_interval_start.strftime('%Y-%m') }}_zones.csv"
 )
 TABLE_NAME_TEMPLATE = "zones"
 
