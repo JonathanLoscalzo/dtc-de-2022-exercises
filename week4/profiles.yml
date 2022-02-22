@@ -1,0 +1,14 @@
+taxi_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: ["complete"]
+      host: ["complete"]
+      user: ["complete"]
+      password: ["complete"]
+      port: ["complete"]
+      dbname: ["complete"]
+      schema: ["complete"]
+      threads: ["complete"]
+      keepalives_idle: ["complete"] # default 0, indicating the system default
+      connect_timeout: ["complete"] # default 10 seconds

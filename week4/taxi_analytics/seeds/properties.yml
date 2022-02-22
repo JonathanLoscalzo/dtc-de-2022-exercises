@@ -1,0 +1,9 @@
+version: 2
+
+seeds:
+  - name: taxi_zone_lookup
+    config: 
+      schema: seed
+      full_refresh: true
+    +column_types:
+      locationid: numeric

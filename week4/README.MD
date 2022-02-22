@@ -56,3 +56,12 @@ AS SELECT * FROM trips_data_all.yellow_tripdata_external_table;
 </details>
 
 
+
+
+## Prepare local env
+- install dbt-postgres
+- add DBT_PROFILES_DIR to your folder #using direnv allow is easy!
+- create a profiles.yml for this project (or use ~/.dbt/profiles.yml)
+- create database taxi-analytics
+- run dbt debug to evaluate profiles and project.
+
